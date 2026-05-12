@@ -18,16 +18,13 @@
 
 local M = {}
 
--- A namespace is Neovim's way to group decorations. Everything this plugin
--- draws in the buffer, such as virtual lines, is tagged with this namespace so
--- it can be cleared without touching decorations from other plugins.
 local ns = vim.api.nvim_create_namespace("math_preview")
 
 local file_patterns = { "*.tex", "*.md", "*.typ" }
 
 local config = {
   -- Used by both pdftocairo and typst when producing PNG files.
-  dpi = 220,
+  dpi = 300,
 
   -- Neovim does not expose terminal cell size in a portable way. This value
   -- converts image pixel height into terminal rows. You can override it from
